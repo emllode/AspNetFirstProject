@@ -38,5 +38,5 @@ C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\ref\razorapp1.d
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\razorapp1.pdb
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\razorapp1.genruntimeconfig.cache
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\razorapp1.csproj.CopyComplete
-C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\about.cshtml.g.cs
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\JoinEventsPage.cshtml.g.cs
+C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\MyEvents.cshtml.g.cs
