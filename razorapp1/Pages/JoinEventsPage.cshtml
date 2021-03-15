@@ -1,0 +1,61 @@
+﻿@page
+@model razorapp1.Pages.JoinEventsPageModel
+@{
+    ViewData["Title"] = "Join the event";
+}
+
+<div class="container">
+    <form>
+        <h2>Register to event</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="first">First Name</label>
+                    <input type="text" class="form-control" placeholder="" id="first">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" class="form-control" placeholder="" id="last">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="email">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="phone">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+        <!--  row   -->
+
+        <label for="newsletter">Would you like to recieve our email newsletter?</label>
+        <div class="checkbox">
+
+            <label>
+                <input type="checkbox" value="Sure!" id="newsletter"> Sure!
+            </label>
+        </div>
+
+
+        <a type="submit" class="btn btn-primary" asp-area="" asp-page="/about">Submit</a>
+    </form>
+</div>
