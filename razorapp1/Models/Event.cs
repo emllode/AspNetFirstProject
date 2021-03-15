@@ -8,8 +8,10 @@ namespace razorapp1.Models
 {
     public class Event
     {
-        public int ID { get; set; }
-        public List<Organizer> Organizer { get; set; }
+        public int EventID { get; set; }
+        public ICollection<Organizer> Organizer { get; set; }
+        public ICollection<Attendee> Attendees { get; set; }
+        public int AttendeeID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }

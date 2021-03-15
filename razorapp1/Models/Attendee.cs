@@ -7,9 +7,11 @@ namespace razorapp1.Models
 {
     public class Attendee
     {
-        public int ID { get; set; }
+        public int AttendeeID { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public ICollection<Event> Events { get; set; }
+
 
     }
 }
