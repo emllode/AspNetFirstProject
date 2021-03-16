@@ -8,14 +8,21 @@ using System.Threading.Tasks;
 
 namespace razorapp1.Pages
 {
-    public class PrivacyModel : PageModel
+    public class FindEvent : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+    
+        private readonly ILogger<FindEvent> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public FindEvent(ILogger<FindEvent> logger)
         {
             _logger = logger;
         }
+
+        public List<Models.Event> Event { get; set; }
+
+
+
+
 
         public void OnGet()
         {

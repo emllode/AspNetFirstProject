@@ -151,3 +151,4 @@ C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\Eve
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\Events\Details.cshtml.g.cs
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\Events\Edit.cshtml.g.cs
 C:\Users\cbchr\source\repos\razorapp1\razorapp1\obj\Debug\net5.0\Razor\Pages\Events\Index.cshtml.g.cs
+C:\Users\cbchr\source\repos\razorapp1\razorapp1\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gdszlIcBG9Bn16nJkL34KRxqSo7Omj/YJ01IPD3DCYz0c8XaIer6Gq9aApTeULm4Y1geum2OomP+MfuUYc/k2A==",
+  "dgSpecHash": "cJhoB35cPORyyPDHsB4pbSpc0QbJLDTbmNZsET7mZXnhHhKIzpAdTXptQRk7sge//6sJ8y/hKGfLUAGvAjsllA==",
   "success": true,
   "projectFilePath": "C:\\Users\\cbchr\\source\\repos\\razorapp1\\razorapp1\\razorapp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cbchr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\cbchr\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.4\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.4.nupkg.sha512",
     "C:\\Users\\cbchr\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\cbchr\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\cbchr\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",

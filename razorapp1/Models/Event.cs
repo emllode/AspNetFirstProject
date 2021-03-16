@@ -10,7 +10,7 @@ namespace razorapp1.Models
     {
         public int EventID { get; set; }
         public ICollection<Organizer> Organizer { get; set; }
-        public ICollection<Attendee> Attendees { get; set; }
+        public ICollection<Attendee> Attendee { get; set; }
         public int AttendeeID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
