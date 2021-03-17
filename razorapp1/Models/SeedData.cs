@@ -15,22 +15,26 @@ namespace razorapp1.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<razorapp1Context>>()))
             {
-                
+
                 if (context.Event.Any())
-                  {
+                {
                     return;   // DB has been seeded
-                  }
+                }
+
+
 
                 context.Event.AddRange(
+
                     new Event
                     {
                         Title = "WayOutWest",
                         Description = "Best Music eeveer ",
                         Place = "Gothenburg",
                         SpotsAvailable = 25,
-                        Date = DateTime.Now
-
+                        Date = DateTime.Now,
+                      
                     }
+
 
                     ); ; 
 

@@ -21,13 +21,13 @@ namespace razorapp1.Migrations
 
             modelBuilder.Entity("AttendeeEvent", b =>
                 {
-                    b.Property<int>("AttendeesAttendeeID")
+                    b.Property<int>("AttendeeID")
                         .HasColumnType("int");
 
                     b.Property<int>("EventsEventID")
                         .HasColumnType("int");
 
-                    b.HasKey("AttendeesAttendeeID", "EventsEventID");
+                    b.HasKey("AttendeeID", "EventsEventID");
 
                     b.HasIndex("EventsEventID");
 
@@ -115,7 +115,7 @@ namespace razorapp1.Migrations
                 {
                     b.HasOne("razorapp1.Models.Attendee", null)
                         .WithMany()
-                        .HasForeignKey("AttendeesAttendeeID")
+                        .HasForeignKey("AttendeeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

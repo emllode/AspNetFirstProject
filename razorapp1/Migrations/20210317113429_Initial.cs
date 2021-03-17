@@ -1,10 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace razorapp1.Migrations
 {
-    public partial class SecondTry : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,15 +44,15 @@ namespace razorapp1.Migrations
                 name: "AttendeeEvent",
                 columns: table => new
                 {
-                    AttendeesAttendeeID = table.Column<int>(type: "int", nullable: false),
+                    AttendeeID = table.Column<int>(type: "int", nullable: false),
                     EventsEventID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AttendeeEvent", x => new { x.AttendeesAttendeeID, x.EventsEventID });
+                    table.PrimaryKey("PK_AttendeeEvent", x => new { x.AttendeeID, x.EventsEventID });
                     table.ForeignKey(
-                        name: "FK_AttendeeEvent_Attendee_AttendeesAttendeeID",
-                        column: x => x.AttendeesAttendeeID,
+                        name: "FK_AttendeeEvent_Attendee_AttendeeID",
+                        column: x => x.AttendeeID,
                         principalTable: "Attendee",
                         principalColumn: "AttendeeID",
                         onDelete: ReferentialAction.Cascade);
