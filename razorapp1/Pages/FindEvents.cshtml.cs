@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using razorapp1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,22 +12,34 @@ namespace razorapp1.Pages
 {
     public class FindEvent : PageModel
     {
-    
-        private readonly ILogger<FindEvent> _logger;
 
-        public FindEvent(ILogger<FindEvent> logger)
+
+        List<Models.Event> Events = new List<Models.Event>();
+
+        [BindProperty]
+        public Models.Event NewAttendee { get; set; }
+
+
+
+        private readonly razorapp1.Data.razorapp1Context _context;
+
+        public FindEvent(razorapp1.Data.razorapp1Context context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public List<Models.Event> Event { get; set; }
+        public IList<Event> Event { get; set; }
 
-
-
-
-
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            Event = await _context.Event.ToListAsync();
+        }
+
+        public void OnPost()
+        {
+            Event.Add(NewAttendee);
+            _context.Event.Add(NewAttendee);
+            _context.SaveChanges();
         }
     }
 }

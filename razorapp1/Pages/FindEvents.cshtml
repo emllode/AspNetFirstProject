@@ -3,26 +3,40 @@
 @{
     ViewData["Title"] = "Find Events";
 
-    List<Models.Event> Events = new List<Models.Event>();
 }
 <h1>@ViewData["Title"]</h1>
 
 
 
-        @foreach (var item in Model.Event)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SpotsAvailable)
-                </td>
-            </tr>
-        }
+@foreach (var item in Model.Event)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <tr>
+                    <td>
+                        <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpotsAvailable)
+                    </td>
+                    <td>
+                        <p>Date the event was created:  @Html.DisplayFor(modelItem => item.Date) </p>
+                    </td>
+                    <a type="button" asp-area="" asp-page="/JoinEventsPage" asp-route-id="@item.EventID"  class="btn btn-primary btn-lg">Join Event</a>
+       
+                </tr>   
+            </div>
+
+            <div class="w-100"></div>
+        </div>
+    </div>
+
+
+}
 
 
 
