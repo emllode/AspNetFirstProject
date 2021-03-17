@@ -46,4 +46,21 @@
             @Html.DisplayFor(model => model.Event.Date)
         </dd>
     </dl>
+
+    <form method="post" asp-page-handler="UpdateNotificationPreferences">
+        <div class="form-check">
+            <input asp-for="ShowMessage" class="form-check-input" />
+            <label asp-for="ShowMessage" class="form-check-label">Do you wanna go on this event?</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Join Event</button>
+        @if(!string.IsNullOrEmpty(Model.Message)) { 
+        <div class="alert alert-primary">
+            @Model.Message
+        </div>
+        }
+    </form>
+    -
+
 </div>
+
+

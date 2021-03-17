@@ -20,8 +20,30 @@ namespace razorapp1.Pages
             _context = context;
         }
 
+ 
+        public string Message  { get; set; }
+
+        [BindProperty]
+        public bool ShowMessage { get; set; }
+
         [BindProperty]
         public Event Event { get; set; }
+
+        public void OnPostUpdateNotificationPreferences(int id)
+        {
+            if(ShowMessage)
+            {
+                Message = "Du är välkommen på eventet.";
+            }
+            else
+            {
+                Message = "Nope, you don't wanna go? :(";
+            }
+
+  
+        }
+
+       
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +58,7 @@ namespace razorapp1.Pages
             {
                 return NotFound();
             }
+
             return Page();
         }
 
@@ -43,6 +66,7 @@ namespace razorapp1.Pages
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();
@@ -73,5 +97,16 @@ namespace razorapp1.Pages
         {
             return _context.Event.Any(e => e.EventID == id);
         }
+
+        public  async Task<IActionResult> OnPostDeleteAsync()
+
+        {
+         
+            Message = "IT WORKS!!";
+            return RedirectToPage();
+
+
+        }
+
     }
 }

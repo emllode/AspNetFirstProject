@@ -15,5 +15,7 @@ namespace razorapp1.Data
         }
 
         public DbSet<razorapp1.Models.Event> Event { get; set; }
+
+        public DbSet<razorapp1.Models.Attendee> Attendee { get; set; }
     }
 }
