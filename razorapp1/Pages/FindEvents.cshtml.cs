@@ -14,8 +14,6 @@ namespace razorapp1.Pages
     {
 
 
-        List<Models.Event> Events = new List<Models.Event>();
-
         [BindProperty]
         public Models.Event NewAttendee { get; set; }
 
