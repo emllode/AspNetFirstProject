@@ -14,16 +14,20 @@ namespace razorapp1.Pages
     {
         private readonly razorapp1.Data.razorapp1Context _context;
 
+
+        public IList<EventAttendee> EventAttendee { get; set; }
+
+
         public MyEventsModel(razorapp1.Data.razorapp1Context context)
         {
             _context = context;
         }
 
-        public IList<Event> Event { get;set; }
-
         public async Task OnGetAsync()
         {
-            Event = await _context.Event.ToListAsync();
+            EventAttendee = await _context.EventAttendees.Include(e => e.Event).Include(e => e.Attendee).ToListAsync();
+
         }
     }
+
 }

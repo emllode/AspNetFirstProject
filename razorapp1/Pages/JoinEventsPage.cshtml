@@ -1,66 +1,51 @@
-﻿@page
+﻿@page "{id}"
 @model razorapp1.Pages.JoinEventsPageModel
 @{
     ViewData["Title"] = "Join the event";
 }
-<h1>Details</h1>
+
+@if (Model.ShowMessage)
+{
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" arial-label="Close"></button>
+        @Model.Message
+    </div>
+}
+
+<div class="card text-center">
+    <div class="card-header">
+        @Model.Event.Title
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            @Model.Event.Title
+        </h5>
+        <p class="card-text">@Model.Event.Description</p>
+        <p>Spots available: @Model.Event.SpotsAvailable</p>
+    </div>
+</div>
+
+<hr />
+
+@if (!Model.ShowMessage)
+{
+    <form method="post">
+        <button asp-page-handler="Join" class="btn btn-primary">Join</button>
+    </form>
+}
+
+
+@if (Model.ShowMessage)
+{
+    <a type="button" asp-area="" asp-page="/MyEvents" class="btn btn-outline-primary">Your events</a>
+    <a type="button" asp-area="" asp-page="/FindEvents" class="btn btn-outline-secondary">More events</a>
+}
+
+
 
 <div>
-    <h4>Event</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Place)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Place)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Address)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Address)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.SpotsAvailable)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.SpotsAvailable)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Event.Date)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Event.Date)
-        </dd>
-    </dl>
-
-    <form method="post" asp-page-handler="UpdateNotificationPreferences">
-        <div class="form-check">
-            <input asp-for="ShowMessage" class="form-check-input" />
-            <label asp-for="ShowMessage" class="form-check-label">Do you wanna go on this event?</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Join Event</button>
-        @if(!string.IsNullOrEmpty(Model.Message)) { 
-        <div class="alert alert-primary">
-            @Model.Message
-        </div>
-        }
-    </form>
-    -
-
+    <a asp-page="Index">Back to List</a>
 </div>
+
 
 

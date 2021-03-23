@@ -14,99 +14,55 @@ namespace razorapp1.Pages
     public class JoinEventsPageModel : PageModel
     {
         private readonly razorapp1.Data.razorapp1Context _context;
-
         public JoinEventsPageModel(razorapp1.Data.razorapp1Context context)
         {
             _context = context;
         }
 
- 
-        public string Message  { get; set; }
-
         [BindProperty]
-        public bool ShowMessage { get; set; }
+        public EventAttendee EventAttendee { get; set; }
 
-        [BindProperty]
         public Event Event { get; set; }
 
-        public void OnPostUpdateNotificationPreferences(int id)
-        {
-            if(ShowMessage)
-            {
-                Message = "Du är välkommen på eventet.";
-            }
-            else
-            {
-                Message = "Nope, you don't wanna go? :(";
-            }
+        [TempData]
+        public String Message { get; set; }
 
-  
-        }
+        public bool ShowMessage => !String.IsNullOrEmpty(Message);
 
-       
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventID == id);
-
-            if (Event == null)
-            {
-                return NotFound();
-            }
+            Event = _context.Event.Where(e => e.EventID == id).FirstOrDefault();
 
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
-        {
+        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
 
-            if (!ModelState.IsValid)
+        /* Vill fixa så man ser notifikation */
+        public async Task<IActionResult> OnPostJoinAsync(int? id)
+        {
+            if (id == null)
             {
-                return Page();
+                return NotFound();
             }
 
-            _context.Attach(Event).State = EntityState.Modified;
+            EventAttendee.Attendee = _context.Attendees.Where(a => a.AttendeeID == 1).FirstOrDefault();
+            EventAttendee.Event = _context.Event.Where(e => e.EventID == id).FirstOrDefault();
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!EventExists(Event.EventID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _context.EventAttendees.Add(EventAttendee);
 
-            return RedirectToPage("./Index");
-        }
 
-        private bool EventExists(int id)
-        {
-            return _context.Event.Any(e => e.EventID == id);
-        }
+            await _context.SaveChangesAsync();
 
-        public  async Task<IActionResult> OnPostDeleteAsync()
+            Message = "The event has been added to your event-page!";
 
-        {
-         
-            Message = "IT WORKS!!";
             return RedirectToPage();
 
-
         }
-
     }
 }

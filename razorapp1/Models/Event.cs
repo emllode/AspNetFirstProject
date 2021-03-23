@@ -9,9 +9,7 @@ namespace razorapp1.Models
     public class Event
     {
         public int EventID { get; set; }
-        public ICollection<Organizer> Organizer { get; set; }
-        public ICollection<Attendee> Attendee { get; set; }
-        public int AttendeeID { get; set; }
+        public Organizer Organizer { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Place { get; set; }
@@ -21,6 +19,7 @@ namespace razorapp1.Models
 
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
-        
+
+
     }
 }
