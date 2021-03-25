@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace razorapp1.Models
 {
@@ -11,6 +10,7 @@ namespace razorapp1.Models
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public ICollection<EventAttendee> EventAttendees { get; set; }
+
 
     }
 

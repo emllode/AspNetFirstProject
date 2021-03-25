@@ -7185,11 +7185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cbchr\\source\\repos\\razorapp1\\razorapp1\\razorapp1.csproj",
+      "projectUniqueName": "C:\\Users\\cbchr\\Source\\Repos\\AspNetFirstProjectNew\\razorapp1\\razorapp1.csproj",
       "projectName": "razorapp1",
-      "projectPath": "C:\\Users\\cbchr\\source\\repos\\razorapp1\\razorapp1\\razorapp1.csproj",
+      "projectPath": "C:\\Users\\cbchr\\Source\\Repos\\AspNetFirstProjectNew\\razorapp1\\razorapp1.csproj",
       "packagesPath": "C:\\Users\\cbchr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cbchr\\source\\repos\\razorapp1\\razorapp1\\obj\\",
+      "outputPath": "C:\\Users\\cbchr\\Source\\Repos\\AspNetFirstProjectNew\\razorapp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cbchr\\AppData\\Roaming\\NuGet\\NuGet.Config",

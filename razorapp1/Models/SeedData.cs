@@ -40,6 +40,7 @@ namespace razorapp1.Models
                             Place = "Gothenburg",
                             SpotsAvailable = 125,
                             Date = DateTime.Now,
+                            Organizer=organizers[0],
                     },
 
                     new Event{ Title = "Ung08",
@@ -47,6 +48,7 @@ namespace razorapp1.Models
                             Place = "Stockholm",
                             SpotsAvailable = 100,
                             Date = DateTime.Now,
+                            Organizer=organizers[0]
                     },
 
                     new Event{
@@ -55,6 +57,7 @@ namespace razorapp1.Models
                             Place = "Gothenburg",
                             SpotsAvailable = 25,
                             Date = DateTime.Now,
+                            Organizer=organizers[0]
                     },
 
                     new Event{    Title = "Backstreet boyz",
@@ -62,12 +65,11 @@ namespace razorapp1.Models
                             Place = "boomBam",
                             SpotsAvailable = 125,
                             Date = DateTime.Now,
+                            Organizer=organizers[0]
                     },
                 };
                 context.AddRange(events);
                 context.SaveChanges();
-
- 
             }
         }
     }

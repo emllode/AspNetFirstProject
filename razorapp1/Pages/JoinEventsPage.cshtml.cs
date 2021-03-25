@@ -1,24 +1,15 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
 using razorapp1.Models;
-using razorapp1.Data;
 
 
 namespace razorapp1.Pages
 {
     public class JoinEventsPageModel : PageModel
     {
-        private readonly razorapp1.Data.razorapp1Context _context;
-        public JoinEventsPageModel(razorapp1.Data.razorapp1Context context)
-        {
-            _context = context;
-        }
-
         [BindProperty]
         public EventAttendee EventAttendee { get; set; }
 
@@ -28,6 +19,14 @@ namespace razorapp1.Pages
         public String Message { get; set; }
 
         public bool ShowMessage => !String.IsNullOrEmpty(Message);
+
+
+
+        private readonly razorapp1.Data.razorapp1Context _context;
+        public JoinEventsPageModel(razorapp1.Data.razorapp1Context context)
+        {
+            _context = context;
+        }
 
         public IActionResult OnGet(int? id)
         {
@@ -43,7 +42,6 @@ namespace razorapp1.Pages
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
 
-        /* Vill fixa så man ser notifikation */
         public async Task<IActionResult> OnPostJoinAsync(int? id)
         {
             if (id == null)
@@ -58,9 +56,10 @@ namespace razorapp1.Pages
 
 
             await _context.SaveChangesAsync();
-
+       
             Message = "The event has been added to your event-page!";
 
+ 
             return RedirectToPage();
 
         }

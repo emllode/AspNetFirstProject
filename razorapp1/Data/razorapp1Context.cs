@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using razorapp1.Models;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace razorapp1.Data
 {
@@ -15,17 +10,8 @@ namespace razorapp1.Data
         }
 
         public DbSet<razorapp1.Models.Event> Event { get; set; }
-        public DbSet<razorapp1.Models.Attendee> Attendee { get; set; }
-        public DbSet<razorapp1.Models.Organizer> Organizer { get; set; }
-
-
-
-        protected override void OnModelCreating(ModelBuilder mB)
-        {
-            mB.Entity<Attendee>().ToTable("Attendee");
-            mB.Entity<Event>().ToTable("Event");
-            mB.Entity<Organizer>().ToTable("Organizer");
-        }
-
+        public DbSet<razorapp1.Models.EventAttendee> EventAttendees { get; set; }
+        public DbSet<razorapp1.Models.Attendee> Attendees { get; set; }
     }
+
 }
